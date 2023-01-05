@@ -20,4 +20,6 @@ func main() {
 
 		return c.SendString(msg)
 	})
+
+	app.Listen(":8000")
 }
