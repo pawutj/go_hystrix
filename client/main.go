@@ -25,6 +25,10 @@ func init() {
 		RequestVolumeThreshold: 1,
 		ErrorPercentThreshold:  100,
 	})
+
+	hystrixStreamHandler := hystrix.NewStreamHandler()
+	hystrixStreamHandler.Start()
+	go http.ListenAndServe(":8002", hystrixStreamHandler)
 }
 
 func oldApi(c *fiber.Ctx) error {
@@ -68,6 +72,7 @@ func api(c *fiber.Ctx) error {
 
 		return nil
 	}, func(err error) error {
+		fmt.Println("error hystrix")
 		return nil
 	})
 	return nil
