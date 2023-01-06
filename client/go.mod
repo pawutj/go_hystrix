@@ -2,7 +2,10 @@ module cilent
 
 go 1.19
 
-require github.com/gofiber/fiber/v2 v2.41.0
+require (
+	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
+	github.com/gofiber/fiber/v2 v2.41.0
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
@@ -11,6 +14,7 @@ require (
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/smartystreets/goconvey v1.7.2 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.43.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect

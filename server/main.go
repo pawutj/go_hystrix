@@ -13,11 +13,11 @@ func main() {
 
 	app.Get("/api", func(c *fiber.Ctx) error {
 		if counter >= 5 && counter <= 10 {
-			time.Sleep(time.Millisecond * 1000)
+			time.Sleep(time.Millisecond * 3000)
 		}
 		msg := fmt.Sprintf("Hello %v", counter)
 		fmt.Println(msg)
-
+		counter++
 		return c.SendString(msg)
 	})
 
